@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Palace Salon | Book Your Appointment</title>
+<meta name="description" content="Hair, nails, skin & makeup services in Lagos. Book your appointment online in seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#1A1117;--bg2:#221620;--bg3:#2A1B27;
+  --rose:#E94F8A;--rose-l:#F488AC;--gold:#D4AF6A;
+  --cream:#F7EDE9;--txt2:#C7AEB8;--txt3:#8C7480;
+  --line:rgba(233,79,138,.16);
+  --r:14px;--rs:9px;--ease:cubic-bezier(.4,0,.2,1);--t:.3s var(--ease);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--cream);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.12}
+.it{font-style:italic}
+.rose{color:var(--rose-l)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--rose-l);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--rose)}
+.stitle{font-size:clamp(1.9rem,4.6vw,3rem);margin-bottom:14px;font-weight:400}
+.sdesc{color:var(--txt2);font-size:1rem;max-width:500px;line-height:1.8;font-family:'Plus Jakarta Sans',sans-serif}
+
+.demo-bar{background:var(--rose);color:#2A0E1A;text-align:center;padding:9px 16px;font-family:'Space Mono',monospace;font-size:.74rem;position:sticky;top:0;z-index:200}
+.demo-bar a{color:#2A0E1A;text-decoration:underline;font-weight:700}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--rs);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem;text-decoration:none;transition:all var(--t);cursor:pointer;border:none;outline:none;white-space:nowrap}
+.btn-rose{background:linear-gradient(135deg,var(--rose-l),var(--rose));color:#fff;box-shadow:0 4px 18px rgba(233,79,138,.35)}
+.btn-rose:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(233,79,138,.5)}
+.btn-line{background:transparent;color:var(--cream);border:1px solid var(--line)}
+.btn-line:hover{border-color:var(--rose);color:var(--rose-l)}
+.btn-gold{background:var(--gold);color:#2A1B0E}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(212,175,106,.35)}
+.btn[disabled]{opacity:.35;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+
+nav{position:sticky;top:35px;z-index:100;padding:16px 0;background:rgba(26,17,23,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo-mark{width:26px;height:26px;flex-shrink:0}
+.logo-txt{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.3rem;color:var(--cream)}
+.navl{display:flex;align-items:center;gap:28px;list-style:none}
+.navl a{color:var(--txt2);text-decoration:none;font-size:.84rem;font-weight:500}
+.navl a:hover{color:var(--cream)}
+
+.hero{padding:64px 0 56px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(233,79,138,.1),transparent 70%);pointer-events:none}
+.hero-c{text-align:center;max-width:640px;margin:0 auto;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.3rem,5.5vw,4rem);margin-bottom:20px}
+.hero p{color:var(--txt2);font-size:1.04rem;margin:0 auto 30px;max-width:480px}
+.hero-ring{display:flex;justify-content:center;margin-bottom:36px}
+.hero-ring svg{width:120px;height:120px}
+
+#booker{background:var(--bg)}
+.bk-wrap{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:32px;margin-top:44px}
+.bk-step-lbl{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--rose-l);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.bk-step-lbl .n{width:22px;height:22px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}
+
+.cat-tabs{display:flex;gap:9px;margin-bottom:22px;flex-wrap:wrap}
+.cat-tab{background:var(--bg3);border:1px solid var(--line);color:var(--txt2);padding:8px 16px;border-radius:100px;font-family:'Space Mono',monospace;font-size:.72rem;cursor:pointer;transition:all var(--t)}
+.cat-tab.active{background:var(--rose);border-color:var(--rose);color:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;margin-bottom:8px}
+.svc-pick{background:var(--bg3);border:1px solid var(--line);border-radius:11px;padding:16px;cursor:pointer;transition:all var(--t);text-align:left}
+.svc-pick:hover{border-color:var(--rose-l)}
+.svc-pick.sel{border-color:var(--rose);background:rgba(233,79,138,.1)}
+.svc-pick h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:6px;color:var(--cream)}
+.svc-meta{display:flex;gap:10px;font-family:'Space Mono',monospace;font-size:.7rem;color:var(--gold)}
+
+.slot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:9px}
+.slot{background:var(--bg3);border:1px solid var(--line);border-radius:9px;padding:11px;text-align:center;cursor:pointer;font-family:'Space Mono',monospace;font-size:.78rem;color:var(--txt2);transition:all var(--t)}
+.slot:hover{border-color:var(--rose-l)}
+.slot.sel{background:var(--rose);border-color:var(--rose);color:#fff}
+
+.bk-summary{margin-top:24px;padding-top:22px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.bk-sum-txt{font-size:.86rem;color:var(--txt2)}
+.bk-sum-txt b{color:var(--cream)}
+
+#why{background:var(--bg2);border-top:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
+.why-item{text-align:center}
+.why-ico{width:42px;height:42px;margin:0 auto 14px}
+.why-item h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;margin-bottom:6px;color:var(--cream)}
+.why-item span{font-size:.78rem;color:var(--txt3)}
+
+#cta{background:linear-gradient(135deg,var(--bg3),var(--bg2));border-top:1px solid var(--line);padding:64px 0;text-align:center}
+#cta h2{font-size:clamp(1.9rem,4.4vw,2.6rem);margin-bottom:14px}
+#cta p{color:var(--txt2);max-width:440px;margin:0 auto 28px;font-family:'Plus Jakarta Sans',sans-serif}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--bg);border-top:1px solid var(--line);padding:40px 0 24px}
+.fbot-disclosure{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:22px;font-size:.78rem;color:var(--txt2);line-height:1.7;font-family:'Plus Jakarta Sans',sans-serif}
+.fbot-disclosure a{color:var(--rose-l)}
+.ffinal{display:flex;justify-content:space-between;font-size:.75rem;color:var(--txt3);flex-wrap:wrap;gap:8px}
+.ffinal a{color:var(--txt2);text-decoration:none}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rv.in{opacity:1;transform:translateY(0)}
+
+@media(max-width:880px){
+  .navl{display:none}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .bk-wrap{padding:22px}
+}
+@media(max-width:560px){
+  section{padding:54px 0}
+  .hero{padding:44px 0}
+  .svc-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column}
+  .bk-summary{flex-direction:column;align-items:stretch}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">★ <b>DEMO PROJECT</b> — Sample site built by <a href="https://wa.me/2348162199138?text=Hi%20Elijah!%20I%20saw%20the%20Glow%20Palace%20demo%20and%20I%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank">Mr Smile Digital Solutions</a></div>
+
+<nav>
+  <div class="navin">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" stroke="#D4AF6A" stroke-width="1.5"/><circle cx="16" cy="16" r="5" stroke="#E94F8A" stroke-width="1.5"/></svg>
+      <span class="logo-txt">Glow Palace</span>
+    </a>
+    <ul class="navl">
+      <li><a href="#booker">Book Now</a></li>
+      <li><a href="#why">Why Us</a></li>
+    </ul>
+    <a href="https://wa.me/2348162199138?text=Hi%20Elijah!%20I%20saw%20the%20Glow%20Palace%20demo%20and%20I%27m%20interested%20in%20a%20website%20for%20my%20business." class="btn btn-rose" target="_blank" style="padding:10px 18px;font-size:.78rem">Get This For My Business</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-c rv">
+      <div class="hero-ring">
+        <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="38" stroke="#D4AF6A" stroke-width="1.4"/><circle cx="50" cy="50" r="38" stroke="#E94F8A" stroke-width="1.4" stroke-dasharray="4 6" opacity=".6"/><path d="M38 50a12 12 0 0124 0" stroke="#F488AC" stroke-width="1.4"/></svg>
+      </div>
+      <div class="eyebrow" style="justify-content:center"><span></span>Lekki · Lagos</div>
+      <h1>Look Good. <span class="rose it">Feel Golden.</span></h1>
+      <p>Hair, nails, skin & makeup — book your appointment in under a minute. No calls, no waiting on a reply.</p>
+      <a href="#booker" class="btn btn-rose">Book an Appointment →</a>
+    </div>
+  </div>
+</section>
+
+<section id="booker">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Book Online</div>
+      <h2 class="stitle">Reserve Your <span class="rose it">Glow-Up</span></h2>
+      <p class="sdesc">Pick a service, choose a time, and confirm — all in one place.</p>
+    </div>
+
+    <div class="bk-wrap rv">
+      <div class="bk-step-lbl"><span class="n">1</span>Choose a Service</div>
+      <div class="cat-tabs" id="cat-tabs"></div>
+      <div class="svc-grid" id="svc-grid"></div>
+
+      <div id="step2" style="display:none;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)">
+        <div class="bk-step-lbl"><span class="n">2</span>Choose a Time Slot</div>
+        <div class="slot-grid" id="slot-grid"></div>
+      </div>
+
+      <div id="summary" class="bk-summary" style="display:none">
+        <div class="bk-sum-txt" id="sum-txt"></div>
+        <a href="#" id="confirm-btn" class="btn btn-gold">Confirm via WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Why Glow Palace</div>
+      <h2 class="stitle">Trusted by <span class="rose it">Regulars</span></h2>
+    </div>
+    <div class="why-grid" id="why-grid"></div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Ready for Your <span class="rose it">Next Appointment?</span></h2>
+      <p>Booking takes less than a minute. Pick your service and let's get you glowing.</p>
+      <div class="cta-btns">
+        <a href="#booker" class="btn btn-rose">Book Now →</a>
+        <a href="https://wa.me/2348162199138?text=Hi!%20I%27d%20like%20to%20ask%20about%20booking%20at%20Glow%20Palace." class="btn btn-line" target="_blank">Ask a Question</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbot-disclosure">
+      ℹ️ <b>This is a demo project</b> — Glow Palace Salon is a sample built to showcase what Mr Smile Digital Solutions can build for salons and beauty businesses. Services, prices and time slots shown are illustrative. <a href="https://wa.me/2348162199138?text=Hi%20Elijah!%20I%20saw%20the%20Glow%20Palace%20demo%20and%20I%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank">Want one for your business? →</a>
+    </div>
+    <div class="ffinal">
+      <span>© 2025 Glow Palace Salon — Demo Project</span>
+      <a href="index.html">← Back to Mr Smile Digital Solutions</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SERVICES=[
+  {cat:'Hair',name:'Braids (Medium)',price:8000,dur:'3hrs'},
+  {cat:'Hair',name:'Silk Press',price:6000,dur:'1.5hrs'},
+  {cat:'Hair',name:'Wig Installation',price:10000,dur:'2hrs'},
+  {cat:'Hair',name:'Locs Retouch',price:7000,dur:'2hrs'},
+  {cat:'Nails',name:'Gel Manicure',price:5000,dur:'45min'},
+  {cat:'Nails',name:'Pedicure',price:4500,dur:'45min'},
+  {cat:'Skin',name:'Classic Facial',price:9000,dur:'1hr'},
+  {cat:'Skin',name:'Deep Cleanse Facial',price:12000,dur:'1.5hr'},
+  {cat:'Makeup',name:'Glam Makeup Look',price:15000,dur:'1.5hr'},
+  {cat:'Makeup',name:'Bridal Makeup',price:35000,dur:'3hrs'},
+];
+const SLOTS=['Mon 10:00am','Mon 2:00pm','Wed 11:00am','Wed 3:00pm','Fri 10:00am','Fri 1:00pm','Sat 9:00am','Sat 12:00pm'];
+const WHY=[
+  {ico:'✓',t:'Verified Stylists',s:'Experienced, vetted team'},
+  {ico:'⏱',t:'On-Time Service',s:'We respect your schedule'},
+  {ico:'✨',t:'Premium Products',s:'Quality you can feel'},
+  {ico:'💬',t:'Easy Rebooking',s:'Book your next visit in seconds'},
+];
+
+const $=id=>document.getElementById(id);
+let activeCat='Hair',selService=null,selSlot=null;
+
+function fmtN(n){return '₦'+n.toLocaleString()}
+
+function renderTabs(){
+  const cats=[...new Set(SERVICES.map(s=>s.cat))];
+  $('cat-tabs').innerHTML=cats.map(c=>`<button class="cat-tab${c===activeCat?' active':''}" data-cat="${c}">${c}</button>`).join('');
+  $('cat-tabs').querySelectorAll('.cat-tab').forEach(b=>b.addEventListener('click',()=>{activeCat=b.dataset.cat;renderTabs();renderServices()}));
+}
+
+function renderServices(){
+  const items=SERVICES.filter(s=>s.cat===activeCat);
+  $('svc-grid').innerHTML=items.map(s=>`
+    <button class="svc-pick${selService&&selService.name===s.name?' sel':''}" data-name="${s.name}">
+      <h4>${s.name}</h4>
+      <div class="svc-meta"><span>${fmtN(s.price)}</span><span>·</span><span>${s.dur}</span></div>
+    </button>`).join('');
+  $('svc-grid').querySelectorAll('.svc-pick').forEach(b=>b.addEventListener('click',()=>{
+    selService=SERVICES.find(s=>s.name===b.dataset.name);
+    selSlot=null;
+    renderServices();
+    $('step2').style.display='block';
+    renderSlots();
+    updateSummary();
+    document.getElementById('step2').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }));
+}
+
+function renderSlots(){
+  $('slot-grid').innerHTML=SLOTS.map(s=>`<button class="slot${selSlot===s?' sel':''}" data-slot="${s}">${s}</button>`).join('');
+  $('slot-grid').querySelectorAll('.slot').forEach(b=>b.addEventListener('click',()=>{
+    selSlot=b.dataset.slot;
+    renderSlots();
+    updateSummary();
+  }));
+}
+
+function updateSummary(){
+  if(selService&&selSlot){
+    $('summary').style.display='flex';
+    $('sum-txt').innerHTML=`<b>${selService.name}</b> · ${fmtN(selService.price)} · ${selSlot}`;
+    const msg=`Hi! I'd like to book an appointment at Glow Palace Salon:\n\n*Service:* ${selService.name}\n*Price:* ${fmtN(selService.price)}\n*Duration:* ${selService.dur}\n*Preferred Time:* ${selSlot}`;
+    $('confirm-btn').href='https://wa.me/2348162199138?text='+encodeURIComponent(msg);
+  }else{
+    $('summary').style.display='none';
+  }
+}
+
+$('why-grid').innerHTML=WHY.map(w=>`<div class="why-item"><div class="why-ico" style="font-size:1.6rem">${w.ico}</div><h4>${w.t}</h4><span>${w.s}</span></div>`).join('');
+
+renderTabs();renderServices();
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'))}
+</script>
+</body>
+</html>

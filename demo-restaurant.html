@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lagos Kitchen | Order Real Naija Flavour</title>
+<meta name="description" content="Order authentic Nigerian dishes online. Jollof, suya, soups & more — straight to your WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#150E0C;--bg2:#1D1411;--bg3:#241915;
+  --red:#E8472A;--red-d:#B8351E;--amb:#F2A93B;--amb-l:#F6C26B;
+  --cream:#FBF3E7;--txt2:#C9B8AC;--txt3:#8C7A6E;
+  --line:rgba(242,169,59,.16);
+  --r:14px;--rs:9px;--ease:cubic-bezier(.4,0,.2,1);--t:.3s var(--ease);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:0}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+.amb{color:var(--amb-l)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.14em;color:var(--amb);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--amb)}
+.stitle{font-size:clamp(1.8rem,4.2vw,2.7rem);margin-bottom:14px}
+.sdesc{color:var(--txt2);font-size:1rem;max-width:520px;line-height:1.8}
+
+.demo-bar{background:var(--amb);color:#1A0F08;text-align:center;padding:9px 16px;font-family:'Space Mono',monospace;font-size:.74rem;position:sticky;top:0;z-index:200}
+.demo-bar a{color:#1A0F08;text-decoration:underline;font-weight:700}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--rs);font-family:'DM Sans',sans-serif;font-weight:700;font-size:.86rem;text-decoration:none;transition:all var(--t);cursor:pointer;border:none;outline:none;white-space:nowrap}
+.btn-red{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;box-shadow:0 4px 18px rgba(232,71,42,.35)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(232,71,42,.5)}
+.btn-line{background:transparent;color:var(--cream);border:1px solid var(--line)}
+.btn-line:hover{border-color:var(--amb);color:var(--amb-l)}
+.btn-amb{background:var(--amb);color:#1A0F08}
+.btn-amb:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(242,169,59,.35)}
+.btn[disabled]{opacity:.4;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+
+nav{position:sticky;top:35px;z-index:100;padding:16px 0;background:rgba(21,14,12,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo-mark{width:28px;height:28px;flex-shrink:0}
+.logo-txt{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;font-weight:800;color:var(--cream)}
+.navl{display:flex;align-items:center;gap:28px;list-style:none}
+.navl a{color:var(--txt2);text-decoration:none;font-size:.84rem;font-weight:500}
+.navl a:hover{color:var(--cream)}
+
+.hero{padding:64px 0 56px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-120px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,71,42,.12),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);margin-bottom:18px}
+.hero p{color:var(--txt2);font-size:1.02rem;max-width:460px;margin-bottom:26px}
+.special-tag{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px dashed var(--amb);border-radius:100px;padding:8px 18px;font-family:'Space Mono',monospace;font-size:.76rem;color:var(--amb-l);margin-bottom:22px}
+.hero-illus{display:flex;align-items:center;justify-content:center}
+.hero-illus svg{width:100%;max-width:320px}
+
+#order-bar{position:sticky;bottom:0;z-index:150;background:rgba(21,14,12,.97);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:14px 0;transform:translateY(100%);transition:transform .35s var(--ease)}
+#order-bar.show{transform:translateY(0)}
+.ob-in{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:1140px;margin:0 auto;padding:0 24px}
+.ob-info{display:flex;flex-direction:column}
+.ob-count{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--txt3)}
+.ob-total{font-family:'Bricolage Grotesque',sans-serif;font-size:1.2rem;font-weight:800;color:var(--amb-l)}
+
+#menu{background:var(--bg)}
+.cat-tabs{display:flex;gap:10px;margin:38px 0 32px;flex-wrap:wrap}
+.cat-tab{background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:9px 18px;border-radius:100px;font-family:'Space Mono',monospace;font-size:.74rem;cursor:pointer;transition:all var(--t)}
+.cat-tab.active{background:var(--red);border-color:var(--red);color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.menu-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:all var(--t)}
+.menu-card:hover{border-color:var(--amb)}
+.menu-card.added{border-color:var(--red);background:rgba(232,71,42,.06)}
+.mc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.mc-icon{width:40px;height:40px;flex-shrink:0}
+.mc-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.98rem;margin-bottom:4px}
+.mc-cat{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--txt3);text-transform:uppercase;letter-spacing:.05em}
+.mc-price{font-family:'Space Mono',monospace;font-size:1.05rem;font-weight:700;color:var(--amb-l)}
+.mc-add{width:100%;justify-content:center;padding:10px;font-size:.82rem}
+
+#how{background:var(--bg2);border-top:1px solid var(--line)}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:46px;position:relative}
+.how-steps::before{content:'';position:absolute;top:23px;left:16%;right:16%;height:1px;background:repeating-linear-gradient(90deg,var(--amb) 0 6px,transparent 6px 12px);opacity:.4}
+.hstep{padding:0 22px;position:relative;z-index:1}
+.hnum{width:46px;height:46px;border-radius:50%;background:var(--bg);border:1.5px solid var(--red);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;font-weight:800;color:var(--amb-l);margin-bottom:16px}
+.hstep h3{font-size:1.02rem;margin-bottom:7px}
+.hstep p{font-size:.84rem;color:var(--txt2);line-height:1.7}
+
+#visit{background:var(--bg)}
+.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.visit-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;align-items:center;gap:14px}
+.visit-ico{width:32px;height:32px;flex-shrink:0}
+.visit-card h4{font-size:.88rem;margin-bottom:4px;font-family:'DM Sans',sans-serif;font-weight:700}
+.visit-card span{font-size:.78rem;color:var(--txt3)}
+
+#cta{background:linear-gradient(135deg,var(--bg3),var(--bg2));border-top:1px solid var(--line);padding:64px 0;text-align:center}
+#cta h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:14px}
+#cta p{color:var(--txt2);max-width:460px;margin:0 auto 28px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--bg);border-top:1px solid var(--line);padding:40px 0 24px}
+.fbot-disclosure{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:22px;font-size:.78rem;color:var(--txt2);line-height:1.7}
+.fbot-disclosure a{color:var(--amb-l)}
+.ffinal{display:flex;justify-content:space-between;font-size:.75rem;color:var(--txt3);flex-wrap:wrap;gap:8px}
+.ffinal a{color:var(--txt2);text-decoration:none}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rv.in{opacity:1;transform:translateY(0)}
+
+@media(max-width:880px){
+  .navl{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-illus{display:none}
+  .how-steps{grid-template-columns:1fr;gap:26px}
+  .how-steps::before{display:none}
+  .visit-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  section{padding:54px 0}
+  .hero{padding:44px 0}
+  .menu-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column}
+  .ob-in{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">★ <b>DEMO PROJECT</b> — Sample site built by <a href="https://wa.me/2348162199138?text=Hi%20Elijah!%20I%20saw%20the%20Lagos%20Kitchen%20demo%20and%20I%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank">Mr Smile Digital Solutions</a></div>
+
+<nav>
+  <div class="navin">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none"><path d="M9 14c0-4 3-7 7-7s7 3 7 7" stroke="#F2A93B" stroke-width="1.8" stroke-linecap="round"/><path d="M6 14h20l-2 12H8L6 14z" stroke="#E8472A" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 19v4M19 19v4" stroke="#F6C26B" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="logo-txt">Lagos Kitchen</span>
+    </a>
+    <ul class="navl">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#how">How to Order</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+    <a href="https://wa.me/2348162199138?text=Hi%20Elijah!%20I%20saw%20the%20Lagos%20Kitchen%20demo%20and%20I%27m%20interested%20in%20a%20website%20for%20my%20business." class="btn btn-red" target="_blank" style="padding:10px 18px;font-size:.78rem">Get This For My Business</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="rv">
+        <div class="eyebrow">Lekki · Lagos</div>
+        <h1>Real Naija Flavour,<br><span class="amb">Delivered Hot</span></h1>
+        <p>Jollof, suya, soups, and swallow — made fresh daily. Order straight to WhatsApp, no app, no stress.</p>
+        <div class="special-tag">🔥 Today's Special: Asun + Chapman Combo</div>
+        <div><a href="#menu" class="btn btn-red">Order Now →</a></div>
+      </div>
+      <div class="hero-illus rv">
+        <svg viewBox="0 0 300 280" fill="none">
+          <path d="M70 110c0-30 22-54 50-54s50 24 50 54" stroke="#F2A93B" stroke-width="2" stroke-linecap="round"/>
+          <path d="M40 110h160l-14 110H54L40 110z" stroke="#E8472A" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M85 150v50M120 150v50M155 150v50" stroke="#F6C26B" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+          <path d="M30 60c5-10 15-10 20 0M60 50c5-10 15-10 20 0M90 60c5-10 15-10 20 0" stroke="#F2A93B" stroke-width="1.6" stroke-linecap="round" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Full Menu</div>
+      <h2 class="stitle">What Are You <span class="amb">Craving Today?</span></h2>
+      <p class="sdesc">Tap any dish to add it to your order. When you're ready, send it straight to WhatsApp.</p>
+    </div>
+    <div class="cat-tabs rv" id="cat-tabs"></div>
+    <div class="menu-grid" id="menu-grid"></div>
+  </div>
+</section>
+
+<div id="order-bar">
+  <div class="ob-in">
+    <div class="ob-info">
+      <span class="ob-count" id="ob-count">0 items in your order</span>
+      <span class="ob-total" id="ob-total">₦0</span>
+    </div>
+    <a href="#" id="ob-send" class="btn btn-amb">Send Order via WhatsApp →</a>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:520px;margin:0 auto">
+      <div class="eyebrow" style="justify-content:center"><span></span>How It Works</div>
+      <h2 class="stitle">From Craving to <span class="amb">Doorstep</span></h2>
+    </div>
+    <div class="how-steps">
+      <div class="hstep rv"><div class="hnum">1</div><h3>Browse the Menu</h3><p>Tap any dish to add it to your order — see your total update live as you go.</p></div>
+      <div class="hstep rv"><div class="hnum">2</div><h3>Review Your Order</h3><p>Check your items and total at the bottom of the screen before sending.</p></div>
+      <div class="hstep rv"><div class="hnum">3</div><h3>Send via WhatsApp</h3><p>One tap sends your full order straight to us — we confirm and get cooking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Find Us</div>
+      <h2 class="stitle">Visit or <span class="amb">Order In</span></h2>
+    </div>
+    <div class="visit-grid" id="visit-grid"></div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Hungry? <span class="amb">Order Now</span></h2>
+      <p>Skip the queue — order directly on WhatsApp and we'll have it ready for pickup or delivery.</p>
+      <div class="cta-btns">
+        <a href="#menu" class="btn btn-red">Browse Menu →</a>
+        <a href="https://wa.me/2348162199138?text=Hi!%20I%27d%20like%20to%20place%20an%20order%20at%20Lagos%20Kitchen." class="btn btn-line" target="_blank">Order via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbot-disclosure">
+      ℹ️ <b>This is a demo project</b> — Lagos Kitchen is a sample built to showcase what Mr Smile Digital Solutions can build for restaurants and food businesses. Menu and location shown are illustrative. <a href="https://wa.me/2348162199138?text=Hi%20Elijah!%20I%20saw%20the%20Lagos%20Kitchen%20demo%20and%20I%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank">Want one for your business? →</a>
+    </div>
+    <div class="ffinal">
+      <span>© 2025 Lagos Kitchen — Demo Project</span>
+      <a href="index.html">← Back to Mr Smile Digital Solutions</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const MENU=[
+  {cat:'Rice & Swallow',name:'Jollof Rice & Chicken',price:3500},
+  {cat:'Rice & Swallow',name:'Fried Rice & Turkey',price:4000},
+  {cat:'Rice & Swallow',name:'Amala & Ewedu',price:2500},
+  {cat:'Rice & Swallow',name:'Pounded Yam & Egusi',price:3000},
+  {cat:'Grills & Sides',name:'Beef Suya (Full Stick Set)',price:2000},
+  {cat:'Grills & Sides',name:'Asun (Spicy Goat Meat)',price:4500},
+  {cat:'Grills & Sides',name:'Fried Plantain (Dodo)',price:1000},
+  {cat:'Grills & Sides',name:'Peppered Snail',price:5000},
+  {cat:'Soups',name:'Pepper Soup (Catfish)',price:3500},
+  {cat:'Soups',name:'Afang Soup & Rice',price:3500},
+  {cat:'Drinks',name:'Chapman (Large Jug)',price:2500},
+  {cat:'Drinks',name:'Zobo (Bottle)',price:800},
+];
+const VISIT=[
+  {ico:'🕒',t:'Opening Hours',s:'Mon–Sat · 9am – 9pm'},
+  {ico:'📍',t:'Location',s:'Admiralty Way, Lekki Phase 1'},
+  {ico:'🛵',t:'Delivery',s:'Within 7km · 30–45 min'},
+];
+
+const $=id=>document.getElementById(id);
+const order={};
+let activeCat='All';
+
+function fmtN(n){return '₦'+n.toLocaleString()}
+
+function renderTabs(){
+  const cats=['All',...new Set(MENU.map(m=>m.cat))];
+  $('cat-tabs').innerHTML=cats.map(c=>`<button class="cat-tab${c===activeCat?' active':''}" data-cat="${c}">${c}</button>`).join('');
+  $('cat-tabs').querySelectorAll('.cat-tab').forEach(b=>b.addEventListener('click',()=>{activeCat=b.dataset.cat;renderTabs();renderMenu()}));
+}
+
+function renderMenu(){
+  const items=activeCat==='All'?MENU:MENU.filter(m=>m.cat===activeCat);
+  $('menu-grid').innerHTML=items.map(m=>{
+    const qty=order[m.name]||0;
+    return `<div class="menu-card${qty?' added':''}">
+      <div class="mc-top">
+        <div>
+          <div class="mc-cat">${m.cat}</div>
+          <div class="mc-name">${m.name}</div>
+        </div>
+        <svg class="mc-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#F2A93B" stroke-width="1.5" opacity=".6"/><path d="M14 20a6 6 0 0112 0" stroke="#E8472A" stroke-width="1.5"/></svg>
+      </div>
+      <div class="mc-price">${fmtN(m.price)}</div>
+      <button class="btn mc-add ${qty?'btn-amb':'btn-line'}" data-name="${m.name}">${qty?`In Order (${qty}) — Add More`:'+ Add to Order'}</button>
+    </div>`;
+  }).join('');
+  $('menu-grid').querySelectorAll('.mc-add').forEach(b=>b.addEventListener('click',()=>{
+    const n=b.dataset.name;
+    order[n]=(order[n]||0)+1;
+    renderMenu();renderOrderBar();
+  }));
+}
+
+function renderOrderBar(){
+  const items=Object.entries(order);
+  const count=items.reduce((s,[,q])=>s+q,0);
+  const total=items.reduce((s,[n,q])=>s+q*MENU.find(m=>m.name===n).price,0);
+  $('ob-count').textContent=count+' item'+(count!==1?'s':'')+' in your order';
+  $('ob-total').textContent=fmtN(total);
+  $('order-bar').classList.toggle('show',count>0);
+  const lines=items.map(([n,q])=>`${q}x ${n}`).join('\n');
+  const msg=`Hi! I'd like to order from Lagos Kitchen:\n\n${lines}\n\n*Total: ${fmtN(total)}*`;
+  $('ob-send').href='https://wa.me/2348162199138?text='+encodeURIComponent(msg);
+}
+
+$('visit-grid').innerHTML=VISIT.map(v=>`<div class="visit-card"><span style="font-size:1.4rem">${v.ico}</span><div><h4>${v.t}</h4><span>${v.s}</span></div></div>`).join('');
+
+renderTabs();renderMenu();renderOrderBar();
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'))}
+</script>
+</body>
+</html>
